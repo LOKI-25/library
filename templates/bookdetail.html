@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ book.title }}</h1>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>Author:</th>
+        <td>{{ book.author }}</td>
+      </tr>
+      <tr>
+        <th>Publisher:</th>
+        <td>{{ book.publisher }}</td>
+      </tr>
+      <tr>
+        <th>Publication Date:</th>
+        <td>{{ book.publication_date }}</td>
+      </tr>
+      <tr>
+        <th>ISBN:</th>
+        <td>{{ book.isbn }}</td>
+      </tr>
+      <tr>
+        <th>Category:</th>
+        <td>{{ book.category }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="{% url 'book_edit' book.pk %}" class="btn btn-primary">Edit</a>
+  <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'book_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}
